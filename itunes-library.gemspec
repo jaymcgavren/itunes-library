@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name      = 'itunes-library'
-  s.version   = '0.1.1'
+  s.version   = '0.2.1'
 
   s.homepage    = "https://github.com/josh/itunes-library"
   s.summary     = "Wrapper around iTunes Library.xml"
@@ -8,13 +8,9 @@ Gem::Specification.new do |s|
     A Ruby library that makes it easy to dig around your iTunes Library metadata.
   EOS
 
-  s.files = [
-    'lib/itunes/library.rb',
-    'lib/itunes/playlist.rb',
-    'lib/itunes/track.rb',
-    'LICENSE',
-    'README.md'
-  ]
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
 
   s.add_dependency 'plist'
 

@@ -73,6 +73,10 @@ class TestITunes < Test::Unit::TestCase
     assert_equal "Rock", library.fetch_track(7944).genre
   end
 
+  def test_track_location
+    assert_equal "file://localhost/iTunes/iTunes Media/Music/Coldplay/Viva la Vida/02 Cemeteries of London.mp3", library.fetch_track(7365).location
+  end
+
   def test_track_year
     assert_equal 2009, library.fetch_track(7944).year
   end

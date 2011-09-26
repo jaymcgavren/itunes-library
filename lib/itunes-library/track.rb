@@ -1,3 +1,5 @@
+require 'uri/common'
+
 module ITunes
   class Track
     def initialize(library, properties)
@@ -77,6 +79,11 @@ module ITunes
       self['Kind']
     end
 
+    def location
+      return nil unless location = self['Location']
+      uri_parser.unescape(location)
+    end
+
     def audio?
       !video?
     end
@@ -112,5 +119,12 @@ module ITunes
     def inspect
       "#<#{self.class.name} name=#{name.inspect}>"
     end
+    
+    private
+    
+      def uri_parser
+        @uri_parser ||= URI.const_defined?(:Parser) ? URI::Parser.new : URI
+      end
+    
   end
 end

@@ -11,7 +11,7 @@ Installation
 Usage
 -----
 
-    require 'itunes/library'
+    require 'itunes-library/library'
     library = ITunes::Library.load("~/Music/iTunes/iTunes Library.xml")
 
     library.playlists.map(&:name) #=> ["90's Music", "Classical Music", "Recently Played", ...]

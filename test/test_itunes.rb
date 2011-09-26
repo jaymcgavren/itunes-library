@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-require 'itunes/library'
+require 'itunes-library/library'
 
 require 'test/unit'
 

@@ -1,7 +1,7 @@
 require 'plist'
 
-require 'itunes/playlist'
-require 'itunes/track'
+require 'itunes-library/playlist'
+require 'itunes-library/track'
 
 module ITunes
   class Library
